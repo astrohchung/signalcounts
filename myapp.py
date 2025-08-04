@@ -97,3 +97,6 @@ if hours > 0:
     time_str += f"{hours} hours "
 time_str += f"{seconds} seconds"
 st.write(f"**Exposure Time:** {time_str}")
+
+st.sidebar.markdown("#### Revisions")
+st.sidebar.markdown("Aug. 4, 2025: Signal Count Calculator is released.  Haeun Chung")
