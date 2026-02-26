@@ -15,4 +15,12 @@ LOG_FILE=/home4/astrohch/signalcounts/streamlit_app.log
 #python /home4/astrohch/eos_simple_etc/update_htaccess.py >> $LOG_FILE
 
 # Start the Streamlit app on the assigned port
-streamlit run /home4/astrohch/signalcounts/myapp.py --server.port $PORT >> $LOG_FILE 2>&1
+streamlit run /home4/astrohch/signalcounts/myapp.py \
+    --server.port $PORT \
+    --server.address 127.0.0.1 \
+    --server.headless true \
+    --server.enableCORS false \
+    --browser.gatherUsageStats false \
+    --server.enableXsrfProtection false \
+    --server.enableWebsocketCompression false >> $LOG_FILE 2>&1
+
