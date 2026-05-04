@@ -100,7 +100,12 @@ st.write(f"**Exposure Time:** {time_str}")
 
 st.header("Note")
 st.markdown("This calculator was originally developed and published as part of Chung 2025 SPIE Proceeding ([https://doi.org/10.1117/12.3064254](https://doi.org/10.1117/12.3064254))")
-st.markdown("[Link to Chung 2025 PDF](./Chung2025.pdf)")
+with open("Chung2025.pdf", "rb") as f:
+    st.download_button(
+        label="Download Chung 2025 PDF",
+        data=f,
+        file_name="Chung2025.pdf"
+    )
 
 
 st.write("By default, this calculator estimates signal counts from a diffuse source at around Lyman alpha, per single HWO EAC5 MOS shutter.")
