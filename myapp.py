@@ -18,15 +18,6 @@ st.markdown("[https://signalcounts.astrohchung.com](https://signalcounts.astrohc
 
 st.sidebar.markdown("[https://signalcounts.astrohchung.com](https://signalcounts.astrohchung.com)")
 
-st.write("By default, this calculator estimates signal counts from a diffuse source at around Lyman alpha, per single HWO EAC5 MOS shutter.")
-st.write("Note that this is only signal counts. No other noise included.")
-st.write("Target diffuse emission line sensitivity is set as 1e-19 erg/s/cm²/arcsec².")
-st.write("Default numbers from HWO EAC5: F/#=19, focal length = 171 m. -> Sets diameter as 900 mm in this calculator")
-st.write("Also from HWO EAC5: Single UV MSA shutter size is 100 um x 200 um")
-st.write("-> For the signal count calculation purpose, pixel size of 100 micron with resolution element pixel numbers as 1 and 2 for X and Y is used.")
-st.write("Optimistic throughput of 5\% is assumed here, which makes effective area size as ~30,000 cm²")
-st.write("To check the counts with shutter binning, increase the X or Y pixel numbers. This is euivalent to sacrifice spectral resolution or spatial resolution accordingly.")
-
 # --- Sidebar Inputs ---
 st.sidebar.header("Input Parameters")
 
@@ -106,6 +97,18 @@ if hours > 0:
     time_str += f"{hours} hours "
 time_str += f"{seconds} seconds"
 st.write(f"**Exposure Time:** {time_str}")
+
+
+st.write("By default, this calculator estimates signal counts from a diffuse source at around Lyman alpha, per single HWO EAC5 MOS shutter.")
+st.write("Note that this is only signal counts. No other noise included.")
+st.write("Target diffuse emission line sensitivity is set as 1e-19 erg/s/cm²/arcsec².")
+st.write("Default numbers from HWO EAC5: F/#=19, focal length = 171 m. -> Sets diameter as 900 mm in this calculator")
+st.write("Also from HWO EAC5: Single UV MSA shutter size is 100 um x 200 um")
+st.write("-> For the signal count calculation purpose, pixel size of 100 micron with resolution element pixel numbers as 1 and 2 for X and Y is used.")
+st.write("Optimistic throughput of 5\% is assumed here, which makes effective area size as ~30,000 cm²")
+st.write("To check the counts with shutter binning, increase the X or Y pixel numbers. This is euivalent to sacrifice spectral resolution or spatial resolution accordingly.")
+
+
 
 st.sidebar.markdown("#### Revisions")
 st.sidebar.markdown("Aug. 4, 2025: Signal Count Calculator is released.  Haeun Chung")
