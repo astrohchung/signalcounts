@@ -21,21 +21,21 @@ st.sidebar.markdown("[https://signalcounts.astrohchung.com](https://signalcounts
 # --- Sidebar Inputs ---
 st.sidebar.header("Input Parameters")
 
-source_type = st.sidebar.radio("Select Source Type", ["Point Source", "Extended Source"])
+source_type = st.sidebar.radio("Select Source Type", ["Extended Source", "Point Source"])
 
 if source_type == "Point Source":
     flux = st.sidebar.number_input("Flux (erg/s/cm²)", min_value=0.0, value=1e-15, format="%.2e")
 else:
-    surface_brightness = st.sidebar.number_input("Surface Brightness (erg/s/cm²/arcsec²)", min_value=0.0, value=1e-15, format="%.2e")
+    surface_brightness = st.sidebar.number_input("Surface Brightness (erg/s/cm²/arcsec²)", min_value=0.0, value=1e-19, format="%.2e")
 
-wavelength_nm = st.sidebar.number_input("Wavelength (nm)", min_value=90.0, max_value=4000.0, value=645.0)
+wavelength_nm = st.sidebar.number_input("Wavelength (nm)", min_value=90.0, max_value=4000.0, value=121.6)
 exposure_sec = st.sidebar.number_input("Exposure Time (sec)", min_value=0.0, value=36000.0)
-diameter_cm = st.sidebar.number_input("Telescope Diameter (cm)", min_value=0.0, value=10.0)
-f_ratio = st.sidebar.number_input("Telescope F-ratio", min_value=0.0, value=15.0)
+diameter_cm = st.sidebar.number_input("Telescope Diameter (cm)", min_value=0.0, value=900.0)
+f_ratio = st.sidebar.number_input("Telescope F-ratio", min_value=0.0, value=19.0)
 res_x = st.sidebar.number_input("Resolution Element X (pixels)", min_value=1, value=2, step=1)
-res_y = st.sidebar.number_input("Resolution Element Y (pixels)", min_value=1, value=2, step=1)
-pixel_size_um = st.sidebar.number_input("Pixel Size (µm)", min_value=0.0, value=12.0)
-throughput_percent = st.sidebar.number_input("Throughput (%)", min_value=0.0, max_value=100.0, value=10.0)
+res_y = st.sidebar.number_input("Resolution Element Y (pixels)", min_value=1, value=4, step=1)
+pixel_size_um = st.sidebar.number_input("Pixel Size (µm)", min_value=0.0, value=50.0)
+throughput_percent = st.sidebar.number_input("Throughput (%)", min_value=0.0, max_value=100.0, value=5.0)
 
 # --- Calculations ---
 # Convert units
