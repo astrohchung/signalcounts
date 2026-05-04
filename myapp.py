@@ -20,6 +20,7 @@ st.sidebar.markdown("[https://signalcounts.astrohchung.com](https://signalcounts
 
 st.write("By default, this calculator estimates signal counts from a diffuse source at around Lyman alpha, per single HWO EAC5 MOS shutter.")
 st.write("Note that this is only signal counts. No other noise included.")
+st.write("Target diffuse emission line sensitivity is set as 1e-19 erg/s/cm²/arcsec².")
 st.write("Default numbers from HWO EAC5: F/#=19, focal length = 171 m. -> Sets diameter as 900 mm in this calculator")
 st.write("Also from HWO EAC5: Single UV MSA shutter size is 100 um x 200 um")
 st.write("-> For the signal count calculation purpose, pixel size of 100 micron with resolution element pixel numbers as 1 and 2 for X and Y is used.")
