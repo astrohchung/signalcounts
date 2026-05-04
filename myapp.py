@@ -18,6 +18,14 @@ st.markdown("[https://signalcounts.astrohchung.com](https://signalcounts.astrohc
 
 st.sidebar.markdown("[https://signalcounts.astrohchung.com](https://signalcounts.astrohchung.com)")
 
+st.write("By default, this calculator estimates signal counts from a diffuse source at around Lyman alpha, per single HWO EAC5 MOS shutter.")
+st.write("Note that this is only signal counts. No other noise included.")
+st.write("Default numbers from HWO EAC5: F/#=19, focal length = 171 m. -> Sets diameter as 900 mm in this calculator")
+st.write("Also from HWO EAC5: Single UV MSA shutter size is 100 um x 200 um")
+st.write("-> For the signal count calculation purpose, pixel size of 100 micron with resolution element pixel numbers as 1 and 2 for X and Y is used.")
+st.write("Optimistic throughput of 5\% is assumed here, which makes effective area size as ~30,000 cm²")
+st.write("To check the counts with shutter binning, increase the X or Y pixel numbers. This is euivalent to sacrifice spectral resolution or spatial resolution accordingly.")
+
 # --- Sidebar Inputs ---
 st.sidebar.header("Input Parameters")
 
@@ -32,9 +40,9 @@ wavelength_nm = st.sidebar.number_input("Wavelength (nm)", min_value=90.0, max_v
 exposure_sec = st.sidebar.number_input("Exposure Time (sec)", min_value=0.0, value=36000.0)
 diameter_cm = st.sidebar.number_input("Telescope Diameter (cm)", min_value=0.0, value=900.0)
 f_ratio = st.sidebar.number_input("Telescope F-ratio", min_value=0.0, value=19.0)
-res_x = st.sidebar.number_input("Resolution Element X (pixels)", min_value=1, value=2, step=1)
-res_y = st.sidebar.number_input("Resolution Element Y (pixels)", min_value=1, value=4, step=1)
-pixel_size_um = st.sidebar.number_input("Pixel Size (µm)", min_value=0.0, value=50.0)
+res_x = st.sidebar.number_input("Resolution Element X (pixels)", min_value=1, value=1, step=1)
+res_y = st.sidebar.number_input("Resolution Element Y (pixels)", min_value=1, value=2, step=1)
+pixel_size_um = st.sidebar.number_input("Pixel Size (µm)", min_value=0.0, value=100.0)
 throughput_percent = st.sidebar.number_input("Throughput (%)", min_value=0.0, max_value=100.0, value=5.0)
 
 # --- Calculations ---
