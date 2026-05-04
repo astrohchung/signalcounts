@@ -98,6 +98,10 @@ if hours > 0:
 time_str += f"{seconds} seconds"
 st.write(f"**Exposure Time:** {time_str}")
 
+st.header("Note")
+st.markdown("This calculator was originally developed and published as part of Chung 2025 SPIE Proceeding ([https://doi.org/10.1117/12.3064254](https://doi.org/10.1117/12.3064254))")
+st.markdown("[Link to Chung 2025 PDF](./Chung2025.pdf)")
+
 
 st.write("By default, this calculator estimates signal counts from a diffuse source at around Lyman alpha, per single HWO EAC5 MOS shutter.")
 st.write("Note that this is only signal counts. No other noise included.")
@@ -110,5 +114,9 @@ st.write("To check the counts with shutter binning, increase the X or Y pixel nu
 
 
 
+
+
 st.sidebar.markdown("#### Revisions")
 st.sidebar.markdown("Aug. 4, 2025: Signal Count Calculator is released.  Haeun Chung")
+st.sidebar.markdown("May. 4, 2026: During DC HWO Workshop; Default value is changed to reflect HWO EAC5 UV MOS shutter w.r.t. diffuse UV line emission.  Haeun Chung")
+
